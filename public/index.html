@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Terminal web</title>
+  <link rel="stylesheet" href="/vendor/xterm.css">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <h1>Terminal web</h1>
+
+    <button id="btn-local" class="btn primary">+ Terminal local</button>
+
+    <form id="form-manual" class="manual">
+      <input id="manual" type="text" placeholder="usuario@host[:puerto]" autocomplete="off" spellcheck="false">
+      <button class="btn" type="submit">Conectar</button>
+    </form>
+
+    <div class="hosts-head">
+      <span>Servidores (~/.ssh/config)</span>
+      <button id="btn-reload" class="link" title="Recargar lista">↻</button>
+    </div>
+    <input id="filter" type="search" placeholder="Filtrar..." autocomplete="off" spellcheck="false">
+    <ul id="hosts" class="hosts"></ul>
+  </aside>
+
+  <main class="main">
+    <div id="tabs" class="tabs"></div>
+    <div id="panes" class="panes">
+      <div id="empty" class="empty">
+        Elige un servidor de la lista o abre una terminal local.
+      </div>
+    </div>
+  </main>
+
+  <script src="/vendor/xterm.js"></script>
+  <script src="/vendor/addon-fit.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>
